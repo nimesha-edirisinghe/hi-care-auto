@@ -1,0 +1,23 @@
+{
+  "name": "hi-care-auto",
+  "version": "1.0.0",
+  "description": "hi care auto system",
+  "main": "app.js",
+  "scripts": {
+    "start": "ts-node -r dotenv/config src/app.ts",
+    "build": "tsc"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.8",
+    "@types/express": "^4.17.9",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  }
+}
