@@ -63,3 +63,32 @@ export const exceptionHandler = (
   });
 };
 
+export const verifyToken = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): Promise<void> => {
+  if (
+    typeof req.headers["authorization"] != undefined &&
+    req.headers["authorization"]
+  ) {
+    // split token header
+    let tokenHeader = req.headers["authorization"].split(" ")[1];
+    console.log(tokenHeader);
+
+    // validate token header
+    if (tokenHeader) {
+      req.token = tokenHeader;
+      next();
+    } else {
+      res.json({
+        msg: "Unauthorized",
+      });
+    }
+  } else {
+    res.json({
+      msg: "Unauthorized",
+    });
+  }
+};
+
