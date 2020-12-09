@@ -19,9 +19,8 @@ app.use(exceptionHandler);
 app.use(pageNotFoundHandler);
 
 /** Start the server on the specified port only if its not a test run */
-app.listen(process.env.PORT);
-logger.info(`Forecast API listening on port ${process.env.PORT}! ....`);
-
+app.listen(process.env.APP_PORT);
+logger.info(`Forecast API listening on port ${process.env.APP_PORT}! ....`);
 
 (async (): Promise<void> => {
 await createDbConnection();
